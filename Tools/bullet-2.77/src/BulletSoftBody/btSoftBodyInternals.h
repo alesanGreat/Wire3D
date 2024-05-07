@@ -170,11 +170,12 @@ public:
 
 //
 template <typename T>
-static inline void			ZeroInitialize(T& value)
+static inline void ZeroInitialize(T& value)
 {
-	static const T	zerodummy;
-	value=zerodummy;
+	static const T zerodummy = T();
+	value = zerodummy;
 }
+
 //
 template <typename T>
 static inline bool			CompLess(const T& a,const T& b)
